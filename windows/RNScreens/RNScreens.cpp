@@ -1,18 +1,16 @@
 #include "pch.h"
 #include "RNScreens.h"
-#include "JSValueXaml.h"
-#include "RNScreensModule.g.cpp"
 
 namespace winrt {
 using namespace Microsoft::ReactNative;
 using namespace Windows::Data::Json;
 using namespace Windows::Foundation;
-using namespace Windows::UI;
+using namespace Microsoft::UI;
 using namespace Windows::UI::Popups;
-using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml::Controls;
-using namespace Windows::UI::Xaml::Input;
-using namespace Windows::UI::Xaml::Media;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Input;
+using namespace Microsoft::UI::Xaml::Media;
 } // namespace winrt
 
 namespace winrt::RNScreens::implementation {

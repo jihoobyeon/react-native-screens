@@ -1,13 +1,13 @@
 #pragma once
 
-#include "NativeModules.h"
-#include "RNScreensModule.g.h"
 #include "pch.h"
-#include "winrt/Microsoft.ReactNative.h"
+#include "resource.h"
+
+#include "NativeModules.h"
 
 namespace winrt::RNScreens::implementation {
 
-class RNScreensModule : public RNScreensModuleT<RNScreensModule> {
+class RNScreensModule {
  public:
   RNScreensModule(Microsoft::ReactNative::IReactContext const &reactContext);
 
@@ -37,5 +37,5 @@ class RNScreensModule : public RNScreensModuleT<RNScreensModule> {
 
 namespace winrt::RNScreens::factory_implementation {
 struct RNScreensModule
-    : RNScreensModuleT<RNScreensModule, implementation::RNScreensModule> {};
+    : implementation::RNScreensModule {};
 } // namespace winrt::RNScreens::factory_implementation

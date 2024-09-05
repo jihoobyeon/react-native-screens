@@ -1,6 +1,6 @@
 #pragma once
 #include "NativeModules.h"
-#include "winrt/Microsoft.ReactNative.h"
+#include <winrt/Microsoft.ReactNative.h>
 
 namespace winrt::RNScreens::implementation {
 
@@ -19,7 +19,7 @@ class ScreenStackHeaderConfigViewManager
 
   // IViewManager
   winrt::hstring Name() noexcept;
-  winrt::Windows::UI::Xaml::FrameworkElement CreateView() noexcept;
+  winrt::Microsoft::UI::Xaml::FrameworkElement CreateView() noexcept;
 
   // IViewManagerRequiresNativeLayout
   bool RequiresNativeLayout();
@@ -36,7 +36,7 @@ class ScreenStackHeaderConfigViewManager
   NativeProps() noexcept;
 
   void UpdateProperties(
-      winrt::Windows::UI::Xaml::FrameworkElement const &view,
+      winrt::Microsoft::UI::Xaml::FrameworkElement const &view,
       winrt::Microsoft::ReactNative::IJSValueReader const
           &propertyMapReader) noexcept;
 
@@ -51,7 +51,7 @@ class ScreenStackHeaderConfigViewManager
   Commands() noexcept;
 
   void DispatchCommand(
-      winrt::Windows::UI::Xaml::FrameworkElement const &view,
+      winrt::Microsoft::UI::Xaml::FrameworkElement const &view,
       winrt::hstring const &commandId,
       winrt::Microsoft::ReactNative::IJSValueReader const
           &commandArgsReader) noexcept;

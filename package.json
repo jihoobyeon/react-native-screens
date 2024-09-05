@@ -1,6 +1,6 @@
 {
   "name": "react-native-screens",
-  "version": "4.0.0-beta.0",
+  "version": "3.34.0",
   "description": "Native navigation primitives for your React Native app.",
   "scripts": {
     "submodules": "git submodule update --init --recursive && (cd react-navigation && yarn)",
@@ -22,11 +22,8 @@
     "architectures-consistency-check": "node ./scripts/codegen-check-consistency.js",
     "sync-architectures": "node ./scripts/codegen-sync-archs.js"
   },
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
-  "react-native": "src/index",
-  "source": "src/index",
-  "types": "lib/typescript/index.d.ts",
+  "main": "src/index",
+  "types": "src/types.tsx",
   "files": [
     "src/",
     "common/",
@@ -71,8 +68,9 @@
     "warn-once": "^0.1.0"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "18.2.0",
+    "react-native": ">=0.74.0",
+    "react-native-windows": ">=0.74.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -150,13 +148,18 @@
     "node_modules/",
     "lib/"
   ],
+  "packageManager": "yarn@3.8.4",
   "codegenConfig": {
-    "name": "rnscreens",
-    "type": "all",
-    "jsSrcsDir": "./src/fabric",
+    "name": "RNScreensSpec",
+    "type": "modules",
+    "jsSrcsDir": "src/fabric",
     "android": {
       "javaPackageName": "com.swmansion.rnscreens"
+    },
+    "windows": {
+      "namespace": "RNScreensCodegen",
+      "outputDirectory": "windows/RNScreens/codegen",
+      "separateDataTypes": true
     }
-  },
-  "packageManager": "yarn@4.1.1"
+  }
 }
